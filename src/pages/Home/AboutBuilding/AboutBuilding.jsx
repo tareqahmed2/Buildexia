@@ -1,0 +1,82 @@
+import React from "react";
+
+// Fake data imported as JSON
+const buildingDetails = [
+  {
+    id: 1,
+    image: "https://i.ibb.co.com/SVrWHr5/about1.jpg",
+    title: "Modern Design",
+    description:
+      "Our building is designed with contemporary architecture that blends form and function seamlessly. From sleek, open layouts to energy-efficient features, every element is crafted for modern living.",
+  },
+  {
+    id: 2,
+    image: "https://i.ibb.co.com/9sygxQm/about2.jpg",
+    title: "Spacious Interiors",
+    description:
+      "Inside our apartments, you’ll find spacious layouts with large windows, offering plenty of natural light. Each apartment is equipped with modern fixtures and finishes for a comfortable living experience.",
+  },
+  {
+    id: 3,
+    image: "https://i.ibb.co.com/8mHMCk1/about3.webp",
+    title: "Top-Notch Facilities",
+    description:
+      "Our building comes equipped with premium amenities including a fully equipped gym, rooftop terrace, 24/7 security, and dedicated parking spaces to provide you with an elevated living experience.",
+  },
+];
+
+const AboutBuilding = () => {
+  return (
+    <section className="px-5 bg-base-100 text-base-content">
+      <div
+        id="building-management"
+        className="max-w-screen-xl mx-auto my-10 rounded-xl py-10 px-5 bg-base-200"
+      >
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-primary mb-8">
+            About the Building
+          </h2>
+
+          <p className="text-lg mb-12">
+            Welcome to our building, where comfort meets convenience. Our
+            apartments offer a range of modern amenities and are designed for
+            your comfort and security.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {buildingDetails.map((building) => (
+              <div
+                key={building.id}
+                className="card bg-base-100 shadow-xl"
+              >
+                <figure>
+                  <img
+                    src={building.image}
+                    alt={building.title}
+                    className="w-full h-64 object-cover"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h3 className="card-title text-primary">
+                    {building.title}
+                  </h3>
+                  <p>{building.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-lg">
+              Whether you're looking for a cozy apartment or a space with modern
+              amenities, our building is the perfect choice. Contact us today to
+              learn more!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutBuilding;
